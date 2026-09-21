@@ -1,0 +1,169 @@
+{
+  "release": "dda7308f496373a79a589267b67291ee86b0a5ae",
+  "deployed": false,
+  "sections": [
+    {
+      "title": "Nutrition, made easier",
+      "summary": "A warmer green and coral treatment, readable photo cards, full recipe previews and a direct route from this week\u2019s recipe challenge.",
+      "points": [
+        "The weekly recipe challenge opens My Meal Guide and explains the + \u2192 Nutrition route for next time.",
+        "Recipe titles sit beside photographs and wrap fully. Popular photographed meals rank more prominently.",
+        "Fourteen everyday recipes add chicken, quick family meals, curries and dairy-free meat options. Supermarket ingredients and estimated per-serving macros are included.",
+        "Search covers recipe names and ingredients. Expanded filters include preparation time, family meals, protein, dietary needs and cuisines.",
+        "Any cal can be unticked; the filter row advertises horizontal scrolling.",
+        "Swaps rank by meal type, a calorie buffer and similar meal features. Lunch and dinner are compatible; unsuitable matches show an explanation.",
+        "Protein swaps offer matching dish families where a variant exists. Confirmation is followed by the calorie and macro difference.",
+        "Search Enter/Go blurs the input. Grams remain the default instead of ounces."
+      ],
+      "images": [
+        "nutrition-guide-320.png",
+        "nutrition-swap-final.png",
+        "nutrition-preview-final.png",
+        "nutrition-protein-swap.png",
+        "nutrition-final-swap-confirmed.png",
+        "nutrition-tablet-final.png"
+      ],
+      "videos": [
+        "nutrition-final-release.mp4"
+      ]
+    },
+    {
+      "title": "Food tracking that saves",
+      "summary": "A clear submit button, familiar portion units and a reusable meal workflow.",
+      "points": [
+        "Food entry has a visible navy save action.",
+        "Bread supports slices, with equivalent grams and calories; other foods use natural portions where available.",
+        "After saving, add another ingredient or save the combination as a named meal.",
+        "The synthetic account saved Everyday toast and read it back from Recipes using the real food-library domain module."
+      ],
+      "images": [
+        "food-natural-portions.png",
+        "food-named-meal-saved.png"
+      ],
+      "videos": [
+        "food-save-verified.mp4"
+      ]
+    },
+    {
+      "title": "Challenge, habits and navigation",
+      "summary": "One set of habits across Home and Challenge, clearer challenge cards and the correct category board.",
+      "points": [
+        "Home and Challenge use the same challenge habits and editing route. The daily steps goal follows onboarding, including the tested 6,000-step target.",
+        "The duplicate legacy steps task is suppressed, and one workout row remains.",
+        "Onboarding replaces default habits and schedules the daily steps habit consistently.",
+        "Weekly and secret challenges have distinct presentation. The character fallback now renders an actual avatar.",
+        "Build and Tone maps to Tone. The category board and overall board both include eligible clients.",
+        "Shared Back controls restore the preceding app route and scroll position. Home/Challenge foreground restoration has the requested ten-minute window and honours deliberate section links."
+      ],
+      "images": [
+        "challenge-final-hero.png",
+        "home-habits-synced.png",
+        "leaderboard-own-category.png",
+        "leaderboard-overall.png",
+        "challenge-320-final.png"
+      ],
+      "videos": []
+    },
+    {
+      "title": "The map and trainer challenges",
+      "summary": "Trainer-led tasks, private hidden locations and clearer discovery feedback.",
+      "points": [
+        "Map cheers create recipient activity notices.",
+        "The trainer avatar anchors a tappable trainer challenge. Daniel\u2019s broad jump accepts a measured result; Emma\u2019s challenge records stair-master steps in three minutes.",
+        "Other trainers receive a short generic challenge until their own is configured.",
+        "Hidden challenge coordinates and instructions are withheld before discovery.",
+        "Search works at different zoom levels with warm, warmer and colder feedback. Gym-specific landmarks expand the clues.",
+        "The synthetic broad-jump result was saved at 180 cm. Tests cover result isolation, duplicates and integer stair-step counts."
+      ],
+      "images": [
+        "map-trainer-avatar.png",
+        "map-trainer-complete.png",
+        "map-hidden-warm.png"
+      ],
+      "videos": [
+        "map-trainer-challenge.mp4"
+      ]
+    },
+    {
+      "title": "Friends and club community",
+      "summary": "Visible activity alerts, messages between accepted friends and automatic club membership.",
+      "points": [
+        "Challenge shows friend requests, acceptances, workout-sharing activity and cheers in a community card with a red unread badge.",
+        "Accepted friends can message each other.",
+        "Club membership is synchronised into club group chat for eligible Kickstart and Challenge clients.",
+        "Clients without a trainer choose their closest club during onboarding. The copy explains the community without mentioning leaving.",
+        "Clients can leave the club chat later. Membership synchronisation respects that choice.",
+        "Backend and bridge tests cover membership, personal-message access and community notices."
+      ],
+      "images": [
+        "challenge-community-notice.png",
+        "community-friend-message.png",
+        "community-leave-group.png",
+        "onboarding-closest-club.png"
+      ],
+      "videos": [
+        "community-friends.mp4",
+        "club-group-leave.mp4"
+      ]
+    },
+    {
+      "title": "Check-ins and weight corrections",
+      "summary": "Correct record ownership and durable saves replace misleading sync failures.",
+      "points": [
+        "Check-ins resolve the correct self-training identity and save the answers.",
+        "Weight editing targets the exact record, retains the corrected value and supports a second edit.",
+        "Focused tests reject wrong-owner and stale updates and prevent duplicate weekly check-ins."
+      ],
+      "images": [
+        "checkin-saved.png",
+        "weight-repeat-edit.png"
+      ],
+      "videos": []
+    },
+    {
+      "title": "Onboarding and program building",
+      "summary": "Starting measures are easy to defer, and uncertain injuries receive a clear explanation.",
+      "points": [
+        "Add starting measures later is back at the top.",
+        "ACL and other common injury terms trigger targeted questions and conservative trainer review instead of silent failure.",
+        "Injury guidance covers common knee, shoulder, back, ankle and other conditions. This is a review aid, not automatic medical clearance.",
+        "My Training is available as a source when a trainer imports a program into a client account."
+      ],
+      "images": [
+        "onboarding-starting-measures.png",
+        "program-acl-validation.png"
+      ],
+      "videos": [
+        "onboarding-starting-measures.mp4",
+        "program-injury-review.mp4"
+      ]
+    },
+    {
+      "title": "Trainer activity and booking",
+      "summary": "Less setup noise and a booking panel that opens without waiting for a preference save.",
+      "points": [
+        "Trainer activity groups setup into meaningful onboarding-complete or needs-help events, with complete sentences.",
+        "The booking panel opens immediately while the preference write finishes separately. Preconnect hints prepare booking origins and a loading message explains the wait.",
+        "Trainer activity and My Training import were checked in code and relevant domain tests; their full trainer UI flows were not visually verified.",
+        "Booking-provider availability latency remains external. No real booking was submitted, and no measured provider-speed improvement is claimed."
+      ],
+      "images": [],
+      "videos": []
+    },
+    {
+      "title": "JFkart controls",
+      "summary": "The Play button can be reached above the persistent bottom navigation.",
+      "points": [
+        "The game page scrolls and reserves enough clearance for its controls.",
+        "Play visibility was inspected at 320 px and 390 px mobile widths."
+      ],
+      "images": [
+        "games-320-play-1.png",
+        "games-390-play-1.png"
+      ],
+      "videos": [
+        "games-390-record.mp4"
+      ]
+    }
+  ]
+}
