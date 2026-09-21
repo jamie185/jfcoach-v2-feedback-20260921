@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JF Coach V2 · 21 Sep feedback · before and after</title>
+<style>
+  :root { --bg:#f5f8fc; --ink:#141519; --navy:#141742; --muted:#7d8292; --line:#e3ecf5; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  header { padding:36px 28px 18px; max-width:1240px; margin:0 auto; }
+  h1 { font:400 38px/1 "Bebas Neue", Impact, sans-serif; letter-spacing:.04em; margin:0 0 8px; }
+  h2 { font:400 26px/1.05 "Bebas Neue", Impact, sans-serif; letter-spacing:.04em; margin:0 0 4px; }
+  .lead { color:var(--muted); max-width:70ch; margin:0; }
+  main { max-width:1240px; margin:0 auto; padding:0 28px 60px; display:grid; gap:26px; }
+  section { background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px 24px; box-shadow:0 10px 26px -16px rgba(20,23,66,.14); }
+  .sub { color:var(--muted); font-size:13.5px; margin:0 0 14px; }
+  .pair { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:18px; align-items:start; }
+  figure { margin:0; }
+  figure img, figure video { width:100%; max-width:300px; display:block; border-radius:26px; border:1px solid var(--line); box-shadow:0 18px 40px -26px rgba(20,23,66,.45); background:#000; }
+  figcaption { font-size:12.5px; color:var(--muted); margin-top:8px; }
+  .tag { display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:4px 9px; border-radius:999px; margin-bottom:8px; }
+  .before { background:#fdeee6; color:#a2521f; }
+  .after { background:#e8f4ec; color:#1f6b41; }
+  ul { margin:6px 0 0; padding-left:18px; }
+  li { margin:3px 0; }
+  .meta { font-size:12.5px; color:var(--muted); }
+  code { background:#eef2f8; padding:1px 6px; border-radius:6px; font-size:12.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>JF Coach V2 · feedback applied · 21 September 2026</h1>
+  <p class="lead">Every item from Jamie's screen recording, shown before (frames from the recording) and after (the new build on a phone-size preview with synthetic data). Videos are short walkthroughs of the new flows.</p>
+  <p class="meta">Branch <code>fable/v2-feedback-20260921</code> · commit <code>b2e1d2a3</code> · lane build label <code>v2-20260921-b2e1d2a3</code></p>
+</header>
+<main>
+
+<section>
+  <h2>My Day</h2>
+  <p class="sub">"Why is there Upper twice? Why is Steps separate? Slight segmentation between workouts, check-in, nutrition and appointments."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before</span><img src="before/0-01-32.jpg" alt="My Day before: ten rows, Upper 1 twice, steps twice"><figcaption>Ten rows under a "0 of 6" counter, Upper 1 twice, steps twice, three affordances in one list.</figcaption></figure>
+    <figure><span class="tag after">After</span><img src="after/02-home-myday.png" alt="My Day after: grouped into Training, Habits, Nutrition, Check-in"><figcaption>One card, quiet group labels, one row per thing. Steps row carries today's count against the goal.</figcaption></figure>
+    <figure><span class="tag after">After · tick feedback kept</span><img src="after/03-home-habit-ticked.png" alt="Habit ticked with the counter moving"><figcaption>Ticking still works from Home and moves the counter.</figcaption></figure>
+    <figure><span class="tag after">Walkthrough</span><video src="video/home-myday.mp4" controls muted playsinline preload="metadata"></video><figcaption>Ticks, then Log activity opening as a sheet and closing by tapping outside.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>JFI on Home</h2>
+  <p class="sub">"I want that design to be the same on the home screen when I use JFI, even just the message and voice section."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before</span><img src="before/0-00-03.jpg" alt="Home before, with the header gap"><figcaption>JFI row dropped straight into a full-screen chat. Also visible: the gap above the header after switching accounts.</figcaption></figure>
+    <figure><span class="tag after">After</span><img src="after/04-home-jfi-fan.png" alt="Message and Voice pills fanning out of the orb"><figcaption>The JFI row now fans out Message and Voice from the orb, exactly like the program builder.</figcaption></figure>
+    <figure><span class="tag after">After · Message</span><img src="after/05-home-jfi-message.png" alt="JFI conversation after choosing Message"><figcaption>Message opens the conversation; Voice starts the call.</figcaption></figure>
+    <figure><span class="tag after">Walkthrough</span><video src="video/home-jfi.mp4" controls muted playsinline preload="metadata"></video><figcaption>Tap JFI, pick Message, close.</figcaption></figure>
+  </div>
+  <p class="meta">Header gap: the shell now re-settles the viewport on mount, on pageshow and when the app returns to the foreground, so the notch-height gap after Switch account clears without killing the app. This one cannot be reproduced on the preview; it needs a phone check.</p>
+</section>
+
+<section>
+  <h2>Log activity</h2>
+  <p class="sub">"If I try to click out of log activity it doesn't work, I have to click the X." · "Instead of whiting the back screen, can you have a really nice blur effect."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before</span><img src="before/0-02-36.jpg" alt="Log activity before with a whited-out backdrop"><figcaption>A route, so the screen behind unmounted and went white. Only the X closed it.</figcaption></figure>
+    <figure><span class="tag after">After · from Home</span><img src="after/06-home-log-activity-sheet.png" alt="Log activity as a sheet over a blurred Home"><figcaption>A sheet over the page you were on, blurred behind. Tap outside or X to close.</figcaption></figure>
+    <figure><span class="tag after">After · from Training</span><img src="after/14-training-log-activity.png" alt="Log activity sheet over Training"><figcaption>Same sheet from Training.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>This Week</h2>
+  <p class="sub">"Way too much going on at once. Too much text, too much subtext, too many sections. Take out the em dash. 1.70000 no, one decimal max. Calculations hidden by default."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before</span><img src="before/0-03-54.jpg" alt="This Week before, nine stacked sections"><figcaption>Nine stacked sections, expanded calculations, "1.7000000000000028", "194 → 194", em dashes.</figcaption></figure>
+    <figure><span class="tag after">After</span><img src="after/20-thisweek-top.png" alt="This Week after: hero with log box, then row cards"><figcaption>One hero (brief, points, log box, two chips), then row cards: leaderboard, past challenges, secret, boost.</figcaption></figure>
+    <figure><span class="tag after">After · rows</span><img src="after/22-thisweek-past-open.png" alt="Past challenges opened in place"><figcaption>Past challenges opens in place. No em dashes.</figcaption></figure>
+    <figure><span class="tag after">After · boost opened</span><img src="after/23-thisweek-boost-open.png" alt="Health Score boost opened, one decimal"><figcaption>Boost collapsed by default; "1.7 more Health Score"; no "194 → 194" when nothing is boosted.</figcaption></figure>
+    <figure><span class="tag after">After · rules sheet</span><img src="after/24-thisweek-rules-sheet.png" alt="Rules sheet holding the points and level explanation"><figcaption>Points explanation and level moved into the Rules sheet.</figcaption></figure>
+    <figure><span class="tag after">Walkthrough</span><video src="video/this-week.mp4" controls muted playsinline preload="metadata"></video><figcaption>Scroll, open past challenges, open the boost.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Training: phase history, workout cards, library, adjust vs build</h2>
+  <p class="sub">"Phase history should come up as a card from the bottom." · "Pop-up cards aren't coherent, too big." · "What's the point of that library button?" · "Adjusting the existing program is different to creating a new one."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before · phase history</span><img src="before/0-05-10.jpg" alt="Phase history before, floating mid-screen"><figcaption>Started under the status bar, fixed height, gap below, nothing behind dimmed.</figcaption></figure>
+    <figure><span class="tag after">After · phase history</span><img src="after/13-training-phase-history.png" alt="Phase history as a bottom card over blurred Training"><figcaption>A card from the bottom, sized to its content, Training blurred behind.</figcaption></figure>
+    <figure><span class="tag before">Before · workout card</span><img src="before/0-07-08.jpg" alt="Workout pop-up before with stat boxes"><figcaption>Card inside a card, three stat boxes, grey scrim.</figcaption></figure>
+    <figure><span class="tag after">After · workout card</span><img src="after/12-training-workout-sheet.png" alt="Workout sheet after: title, one meta line, rows, one button"><figcaption>Title and X on one line, one meta line, the exercises, one button. Blurred scrim.</figcaption></figure>
+    <figure><span class="tag after">After · My Program</span><img src="after/11-training-program-card.png" alt="My Program card with Adjust this program with JFI"><figcaption>"Adjust this program with JFI" opens the builder on the current program with JFI asking what to change. "Build my program" stays the new-program path. Training library row removed.</figcaption></figure>
+    <figure><span class="tag after">After · adjust entry</span><img src="after/40-adjust-program.png" alt="Program builder opened in adjust mode"><figcaption>The builder in adjust mode.</figcaption></figure>
+    <figure><span class="tag after">Walkthrough</span><video src="video/training-sheets.mp4" controls muted playsinline preload="metadata"></video><figcaption>Workout card, then phase history, both closed by tapping outside.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Challenge tab and home card</h2>
+  <p class="sub">"This week's challenge on the home screen should take me to the Challenge section, then they can open the weekly challenge."</p>
+  <div class="pair">
+    <figure><span class="tag before">Before</span><img src="before/0-03-38.jpg" alt="Challenge tab in the recording"><figcaption>The home card jumped straight into the weekly task.</figcaption></figure>
+    <figure><span class="tag after">After</span><img src="after/30-challenge-top.png" alt="Challenge tab, where the home card now lands"><figcaption>The home card now lands here; the weekly challenge is one tap further.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Noted, not changed in this release</h2>
+  <ul>
+    <li>Progress screen ("that doesn't look right, a different design"): a separate redesign, not started.</li>
+    <li>Health ring value moving between renders (47, 31, 17, 23, 43) in the recording: a data question, not touched.</li>
+    <li>JFI tooltips covering exercise names on the builder review: not requested, left as is.</li>
+  </ul>
+</section>
+</main>
+</body>
+</html>
